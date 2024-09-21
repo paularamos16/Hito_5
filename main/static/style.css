@@ -1,0 +1,161 @@
+/* Estilos generales */
+a:hover {
+    color: #00afe8 !important;
+}
+
+h1,
+p {
+    color: rgb(77, 77, 77);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+body {
+    font-family: "Urbanist", sans-serif;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.pricing-header {
+    max-width: 700px;
+}
+
+/* Estilos del Navbar */
+.btn-outline-primary {
+    color: #00afe8;
+    border-color: #00afe8;
+}
+
+.btn-outline-primary:hover {
+    background-color: #00afe8;
+    color: white;
+    border-color: #00afe8;
+}
+
+.nav-link:hover {
+    color: #00afe8;
+}
+
+.user-name-color {
+    color: #00afe8;
+}
+
+/* Estilos de la Card del Index */
+.en-oferta {
+    color: rgb(255, 48, 48);
+    font-size: 0.9rem;
+}
+
+.precio-normal {
+    color: rgb(64, 64, 255);
+    font-size: 0.9rem;
+}
+
+/* Estilos del formulario */
+.btn-color {
+    background-color: #00afe8;
+    border-color: #00afe8;
+    color: white;
+}
+
+.btn-color:hover {
+    background-color: #085eff;
+    color: white;
+}
+
+.card {
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+
+/** Toasty efecto **/
+#toasty {
+    height: 8rem;
+    animation-name: aparicion;
+    animation-duration: 1s;
+    /* Duración de la animación */
+    animation-delay: 3s;
+    /* Retardo antes de comenzar la animación */
+    animation-fill-mode: forwards;
+    /* Asegura que la imagen se mantenga en la posición final después de la animación */
+    position: absolute;
+    /* Posiciona con respecto al contenedor */
+    bottom: 0.2rem;
+    /* Posiciona la imagen en la esquina inferior */
+    right: 0;
+    /* Posiciona la imagen en la esquina derecha */
+    transform: translateX(100%);
+    /* Mantiene la imagen oculta fuera de la pantalla hacia la derecha antes de la animación */
+}
+
+@keyframes aparicion {
+
+    0%,
+    100% {
+        transform: translateX(100%);
+        /* Comienza y termina fuera de la pantalla hacia la derecha */
+    }
+
+    47% {
+        transform: translateX(0);
+        /* Trae la imagen completamente a la vista */
+    }
+
+    70% {
+        transform: translateX(0);
+        /* Mantiene la imagen en la vista */
+    }
+
+    53% {
+        transform: translateX(0);
+        /* Comienza a mover la imagen fuera de la pantalla */
+    }
+}
+
+/* Estilos de header */
+
+@media (max-width: 575.98px) {
+    header img {
+        height: 3rem;
+    }
+}
+
+/* Banner deslizante */
+.sliding-banner {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #00afe8;
+    color: #fff;
+}
+
+.banner-item {
+    display: inline-block;
+    padding: 0.3rem;
+    position: relative;
+    right: -100%;
+    animation: slideInfinitely 40s linear infinite;
+}
+
+@keyframes slideInfinitely {
+    0% { right: -100%; }
+    100% { right: 100%; }
+}
+
+/* Mensaje de error */
+.alert-error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}

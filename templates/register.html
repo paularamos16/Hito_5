@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="text-center my-4">Suscripcion Gratuita</h3>
+<p class="text-center">Te estas suscribiendo la plan gratuito. Podrás acceder a todos los flanes gratuitos y recibir ofertas esporádicas.</p>
+<p class="fs-5 text-center fw-bold"> Suscripcion gratis</p>
+<div class="row">
+    <div class="col-4 offset-4">
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %} 
+            {{ form }}
+            <button type="submit" class="btn btn-color">Registrarse</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

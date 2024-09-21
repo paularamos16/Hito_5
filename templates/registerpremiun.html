@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3 class="text-center my-4">Suscripcion Premium</h3>
+    <p class="text-center">Te estas suscribiendo la plan Premium. Accede a todos los flanes del Plan Gratuito y del Plan Premium. Adiconalmente recibe ofertas y promociones exporádicas</p>
+    <p class="fs-5 text-center fw-bold"> Suscripcion $2990</p>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <form method="post">
+                {% csrf_token %} 
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-color"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Estás a un paso de entrar...">Ingresar</button>
+        </div>
+    </div>
+{% endblock %}

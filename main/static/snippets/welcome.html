@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Bienvenido {{ user.username | title }}</h1>
+  <p>Accede a los más sabrosos flanes exclusivos para usuarios registrados</p>
+  <h4 class="my-3">Lista de Pasteles Privados</h4>
+  <div class="row">
+    {% for flan in flanes %}
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
+        <div class="card rounded-0" data-bs-toggle="modal" data-bs-target="#flanModal{{flan.id}}">
+          <img src="{{ flan.image_url }}" class="card-img-top rounded-0" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ flan.name }}</h5>
+            <p class="card-text">{{ flan.description }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Precio: (No definido)</li>
+            <li class="list-group-item">
+              {% if flan.is_private %}
+                <span class="en-oferta">Flan Privado</span>
+              {% else %}
+                <span class="precio-normal">Flan Publico</span>
+              {% endif %}
+            </li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Pedir</a>
+            <a href="#" class="card-link">Comprar</a>
+          </div>
+        </div>
+
+        <div class="modal fade" id="flanModal{{flan.id}}" data-bs-keyboard="true" tabindex="-1" aria-labelledby="flanModalLabel{{flan.id}}" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="flanModalLabel{{flan.id}}">{{ flan.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="{{ flan.image_url }}" class="img-fluid" alt="...">
+                <p class="mt-4 fs-5">{{ flan.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

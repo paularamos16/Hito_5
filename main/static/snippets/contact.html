@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Contacto</h1>
+
+    {% for error in errores %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+    {% endfor %}
+    <img src="{% static 'img/toasty.png' %}" style="max-width: 25rem"  id="toasty">
+    <p>Puedes escribirnos en caso que tengas cualquier duda o requerimiento.</p>
+    <div class="row">
+        <div class="col-6">
+            <form action="/contact/" method="post">
+                {% csrf_token %}
+                <!-- <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="" name="customer_name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="" name="customer_email">
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje aquí" name="message"></textarea>
+                </div> -->
+                {{ form }}
+                <button type="submit" class="btn btn-color">Enviar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

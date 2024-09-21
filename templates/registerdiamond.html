@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3 class="text-center my-4">Suscripcion Diamante</h3>
+    <p class="text-center">Te estas suscribiendo la Plan Diamante. Con el podrás acceder a un montón de beneficios como: Ver todos los flanes del catálogo, votar y comentar flanes, crear flanes nuevos y descuentos especiales.</p>
+    <p class="fs-5 text-center fw-bold"> Suscripcion $5990</p>
+    <div class="row">
+        <div class="col-4 offset-4">
+            <form method="post">
+                {% csrf_token %} 
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-color"
+                    data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Estás a un paso de entrar...">Ingresar</button>
+        </div>
+    </div>
+{% endblock %}
